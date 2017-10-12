@@ -12,6 +12,9 @@
     <Folder Include="Views\Home\" />
     <Folder Include="Views\Shared\" />
     <Folder Include="wwwroot\css\" />
+    <Folder Include="Views\Location\" />
+    <Folder Include="Views\Experience\" />
+    <Folder Include="Views\People\" />
   </ItemGroup>
 
   <ItemGroup>
