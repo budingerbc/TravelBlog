@@ -7,10 +7,12 @@
 
 <h1>People</h1>
 
-<table class="table">
+<table class="table table-striped">
 	<tr>
 		<th>@Html.DisplayNameFor(model => model.Name)</th>
 		<th>@Html.DisplayNameFor(model => model.Experiences.Title)</th>
+		<th>Delete</th>
+        <th>Edit</th>
 	</tr>
 
 	@foreach(var person in Model)
@@ -18,6 +20,8 @@
         <tr>
 		    <td>@Html.DisplayFor(model => person.Name)</td>
 		    <td>@Html.DisplayFor(model => person.Experiences.Title)</td>
+		    <td><button class="btn btn-info">@Html.ActionLink("X", "Delete", new { id = person.PeopleId })</button></td>
+            <td> <button class="btn btn-warning">@Html.ActionLink("Edit", "Edit", new { id = person.PeopleId})</button></td>
 	    </tr>
 	}
 </table>

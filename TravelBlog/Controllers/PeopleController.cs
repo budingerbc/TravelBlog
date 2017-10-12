@@ -33,5 +33,35 @@ namespace TravelBlog.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public IActionResult Delete(int id)
+        {
+            var thisPerson = db.People.FirstOrDefault(people => people.PeopleId == id);
+            return View(thisPerson);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirmed(int id)
+        {
+            var thisPerson = db.People.FirstOrDefault(people => people.PeopleId == id);
+            db.People.Remove(thisPerson);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Edit(int id)
+        {
+            var thisPerson = db.People.FirstOrDefault(people => people.PeopleId == id);
+            ViewBag.ExperienceId = new SelectList(db.Experiences, "ExperienceId", "Title", "Description");
+            return View(thisPerson); 
+        }
+
+        [HttpPost]
+        public IActionResult Edit(People people)
+        {
+            db.Entry(people).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

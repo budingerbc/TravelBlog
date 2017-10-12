@@ -7,16 +7,20 @@
 
 <h1>Locations</h1>
 
-<table class="table">
+<table class="table table-striped">
    <tr>
 		<th>@Html.DisplayNameFor(model => model.LocationCity)</th>
 		<th>@Html.DisplayNameFor(model => model.LocationCountry)</th>
+		<th>Delete</th>
+        <th>Edit</th>
    </tr>
    @foreach (var location in Model)
 	{
      <tr>
         <td>@Html.ActionLink(location.LocationCity, "Details", new { id = location.LocationId})</td>
 		<td>@Html.DisplayFor(model => location.LocationCountry)</td>
+		<td><button class="btn btn-info">@Html.ActionLink("X", "Delete", new { id = location.LocationId})</button></td>
+		<td><button class="btn btn-success">@Html.ActionLink("Edit", "Edit", new { id = location.LocationId})</button></td>
 	</tr>
 	}
 

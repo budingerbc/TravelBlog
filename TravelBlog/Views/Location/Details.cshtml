@@ -15,10 +15,11 @@
 	@foreach (var experience in Model.Experiences)
 	{
 	    <tr>
-            <td>@Html.DisplayFor(model => experience.Title)</td>
+            <td>@Html.ActionLink(experience.Title, "Details", "Experience", new { id = experience.ExperienceId})</td>
 	    </tr>
 	}
    
 </table>
 
 <button>@Html.ActionLink("Return to list", "Index")</button>
+<button>@Html.ActionLink("Add Experience", "Create", "Experience", new { id = Model.LocationId })</button>

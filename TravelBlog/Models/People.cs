@@ -13,6 +13,7 @@ namespace TravelBlog.Models
     [Table("People")]
     public class People
     {
+
         [Key]
         public int PeopleId { get; set; }
         public string Name { get; set; }

@@ -7,12 +7,14 @@
 
 <h1>Experiences</h1>
 
-<table class="table">
+<table class="table table-striped">
 	<tr>
 		<th>@Html.DisplayNameFor(model => model.Title)</th>
 		<th>@Html.DisplayNameFor(model => model.Description)</th>
 		<th>@Html.DisplayNameFor(model => model.Locations.LocationCity)</th>
 		<th>@Html.DisplayNameFor(model => model.Locations.LocationCountry)</th>
+		<th>Delete</th>
+		<th>Edit</th>
 	</tr>
 
     @foreach(var experience in Model)
@@ -22,8 +24,11 @@
     		<td>@Html.DisplayFor(model => experience.Description)</td>
     		<td>@Html.DisplayFor(model => experience.Locations.LocationCity)</td>
     		<td>@Html.DisplayFor(model => experience.Locations.LocationCountry)</td>
+		    <td><button class="btn btn-info">@Html.ActionLink("X", "Delete", new { id = experience.ExperienceId})</button></td>
+		    <td><input type="button" class="btn btn-warning" value="Edit" onclick="location.href='@Url.Action("Edit", "Experience", new {id = experience.ExperienceId})'" /></td>
 	    </tr>
 	}
 </table>
 
 <button>@Html.ActionLink("Create new experience", "Create")</button>
+

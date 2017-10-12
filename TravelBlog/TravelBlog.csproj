@@ -33,4 +33,7 @@
   <ItemGroup>
     <Compile Remove="Views.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\People\Details.cshtml" />
+  </ItemGroup>
 </Project>

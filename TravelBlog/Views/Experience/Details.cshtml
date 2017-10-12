@@ -1,0 +1,25 @@
+﻿@model TravelBlog.Models.Experience
+
+@{
+    ViewData["Title"] = "Experience - Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details for @Html.DisplayFor(model => model.Title)</h1>
+<hr />
+<p>Description: @Html.DisplayFor(model => model.Description)</p>
+
+<h3>People that I experienced this with:</h3>
+
+<table class="table">	           
+
+    @foreach(var person in Model.People)
+	{
+    	<tr>
+		    <th>@Html.DisplayFor(model => person.Name)</th>
+        </tr>
+	}
+</table>
+
+<button>@Html.ActionLink("Back to list", "Index")</button>
+

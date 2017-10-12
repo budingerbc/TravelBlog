@@ -1,0 +1,16 @@
+﻿@model TravelBlog.Models.Location
+
+@{
+    ViewData["Title"] = "Location - Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Confirm deletion for @Html.DisplayFor(model => model.LocationCity)</h1>
+
+@using(Html.BeginForm())
+{
+    <input type="submit" value="Delete" class="btn btn-danger">
+}
+
+@Html.ActionLink("Back to list", "Index")
+

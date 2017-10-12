@@ -16,6 +16,7 @@ namespace TravelBlog.Models
         {
             this.Experiences = new HashSet<Experience>();
         }
+
         [Key]
         public int LocationId { get; set; }
         public string LocationCity { get; set; }
